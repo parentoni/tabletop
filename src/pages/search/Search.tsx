@@ -1,12 +1,12 @@
 import { Base } from "../../shared/BasePage";
 import {Navbar} from "../../shared/Navbar";
 import {UserIcon} from "../../shared/UserIcon";
+import {TopProfiles} from "../../shared/TopProfiles";
 
 export const Search = () => {
   return (
     <Base>
-      <UserIcon />
-
+      <UserIcon/>
       <label className="input input-bordered flex items-center gap-2">
         <input type="text" className="grow" placeholder="Search"/>
         <svg
@@ -20,6 +20,8 @@ export const Search = () => {
             clipRule="evenodd"/>
         </svg>
       </label>
+
+      <TopProfiles/>
 
       <Navbar/>
     </Base>

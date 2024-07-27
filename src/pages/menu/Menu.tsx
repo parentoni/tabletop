@@ -11,11 +11,11 @@ export const Menu = () => {
       {/*Menu items*/}
       <div className="flex flex-col items-center justify-start min-h-screen">
         <ul className="menu bg-white rounded-box w-full shadow-lg">
-          <li className="menu-item w-full border-b border-gray-300"><Link to="/settings">Settings</Link></li>
-          <li className="menu-item w-full border-b border-gray-300"><Link to="/statistics">Statistics</Link></li>
-          <li className="menu-item w-full border-b border-gray-300"><Link to="/temp1">Temporary Item 1</Link></li>
-          <li className="menu-item w-full border-b border-gray-300"><Link to="/temp2">Temporary Item 2</Link></li>
-          <li className="menu-item w-full"><Link to="/temp3">Temporary Item 3</Link></li>
+          <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/settings">Settings</Link></li>
+          <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/statistics">Statistics</Link></li>
+          <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/temp1">Temporary Item 1</Link></li>
+          <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/temp2">Temporary Item 2</Link></li>
+          <li className="menu-item w-full hover:bg-gray-200 hover:rounded-lg"><Link to="/temp3">Temporary Item 3</Link></li>
         </ul>
       </div>
       <Navbar/>
