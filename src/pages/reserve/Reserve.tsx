@@ -1,7 +1,7 @@
 import { Base } from "../../shared/BasePage";
 import {Navbar} from "../../shared/Navbar";
 
-export const Home = () => {
+export const Reserve = () => {
   return (
     <Base>
 
