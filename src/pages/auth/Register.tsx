@@ -1,11 +1,22 @@
 import { Base } from "../../shared/BasePage"
 import { Eye, EyeOff, Info, MoveLeft } from "lucide-react";
-import reducedlogo from "../../assets/logo-transparent.jpg"
-import { useNavigate } from "react-router-dom";
+import reducedLogo from '../../assets/logo-transparent.jpg';
+import { useNavigate, useLocation } from "react-router-dom";
+import { useRef, useState } from "react";
 
 export const Register = () => {
   
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const routerLocation = useLocation()
+
+  const [page, setPage] = useState<number>(0)
+
+  const [showFirstPassword, setShowFirstPassword] = useState<boolean>(false)
+  const [showSecondPassword, setShowSecondPassword] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(false)
+
+  const usernameRef = useRef<HTMLInputElement>(null)
+
   return (
   <div className="w-screen h-screen">
     <Base>
