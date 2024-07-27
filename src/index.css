@@ -48,3 +48,19 @@ html {
     @apply inline-block;
   }
 }
+
+
+.menu-item a {
+  display: block;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  width: 100%;
+  text-align: right;
+  font-size: 1.25rem; /* Increase font size */
+  font-weight: bold; /* Make text bold */
+}
+
+.menu-item a:hover {
+  background-color: #e0e0e0;
+}
