@@ -24,7 +24,7 @@ export const Calendar = () => {
 
   useEffect(() => {
     setDates(getDatesForCurrentAndNextWeek());
-    // Fetch upcoming events for the user (mocked for this example)
+    // Fetch upcoming events for the user
     setEvents(["Event 1", "Event 2", "Event 3"]);
   }, []);
 
@@ -33,27 +33,29 @@ export const Calendar = () => {
   };
 
   return (
-    <Base>
-      <UserIcon />
-      <div className="calendar-container">
-        <div className="calendar">
-          {dates.map((date, index) => (
-            <div key={index} className="date" onClick={handleDateClick}>
-              <span className="day">{date.day}</span>
-              <span className="day-number">{date.dayNumber}</span>
-            </div>
-          ))}
-        </div>
-        <div className="events">
-          <h2 className="events-heading">Upcoming Events</h2>
-          <ul>
-            {events.map((event, index) => (
-              <li key={index}>{event}</li>
+    <div className="container mx-auto max-w-sm">
+      <Base>
+        <UserIcon />
+        <div className="calendar-container">
+          <div className="calendar">
+            {dates.map((date, index) => (
+              <div key={index} className="date" onClick={handleDateClick}>
+                <span className="day">{date.day}</span>
+                <span className="day-number">{date.dayNumber}</span>
+              </div>
             ))}
-          </ul>
+          </div>
+          <div className="events">
+            <h2 className="events-heading">Upcoming Events</h2>
+            <ul>
+              {events.map((event, index) => (
+                <li key={index}>{event}</li>
+              ))}
+            </ul>
+          </div>
         </div>
-      </div>
-      <Navbar />
-    </Base>
+        <Navbar />
+      </Base>
+    </div>
   );
 };

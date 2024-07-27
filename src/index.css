@@ -136,3 +136,20 @@ html {
   margin-bottom: 10px;
   text-align: center;
 }
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.btm-nav {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: #fff;
+  border-top: none;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+}

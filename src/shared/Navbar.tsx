@@ -22,7 +22,7 @@ export const Navbar = () => {
   };
 
   return (
-    <div className="btm-nav">
+    <div className="btm-nav max-w-sm mx-auto">
       <button
         className={location.pathname === "/home" ? "active" : ""}
         onClick={handleHomeClick}
