@@ -1,5 +1,9 @@
+import {Base} from "../../shared/BasePage";
+
 export const Landing = () => {
   return (
-    <p>Landing</p>
+    <Base>
+      <p className="px-8 px">Landing</p>
+    </Base>
   )
 }
