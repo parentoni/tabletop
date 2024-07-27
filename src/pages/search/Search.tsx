@@ -7,6 +7,7 @@ export const Search = () => {
   return (
     <Base>
       <UserIcon/>
+
       <label className="input input-bordered flex items-center gap-2">
         <input type="text" className="grow" placeholder="Search"/>
         <svg
@@ -21,6 +22,7 @@ export const Search = () => {
         </svg>
       </label>
 
+      <h2 className="text-3xl font-bold text-gray-800 mb-2 mt-2 text-center p-2">TOP players</h2>
       <TopProfiles/>
 
       <Navbar/>
