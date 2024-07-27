@@ -5,7 +5,7 @@ import { RegisterPage } from "./pages/auth/Register";
 import {Home} from "./pages/home/Home";
 import {Menu} from "./pages/menu/Menu";
 import {Search} from "./pages/search/Search";
-import {Reserve} from "./pages/reserve/Reserve"
+import {Calendar} from "./pages/calendar/Calendar";
 
 export const router = createBrowserRouter([
   {
@@ -26,8 +26,8 @@ export const router = createBrowserRouter([
     element: <Search />,
   },
   {
-    path: "/reserve",
-    element: <Reserve />,
+    path: "/calendar",
+    element: <Calendar />,
   },
 ]);
 

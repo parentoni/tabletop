@@ -14,7 +14,7 @@ export const Navbar = () => {
   };
 
   const handleCalendarClick = () => {
-    navigate("/reserve");
+    navigate("/calendar");
   };
 
   const handleHomeClick = () => {
@@ -31,7 +31,7 @@ export const Navbar = () => {
         <span className="btm-nav-label">Home</span>
       </button>
       <button
-        className={location.pathname === "/reserve" ? "active" : ""}
+        className={location.pathname === "/calendar" ? "active" : ""}
         onClick={handleCalendarClick}
       >
         <Calendar className="h-5 w-5" />

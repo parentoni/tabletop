@@ -70,3 +70,69 @@ html {
   background-color: #e0e0e0;
   transform: scale(1.1);
 }
+
+/* Calendar */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.date {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.date:hover {
+  background-color: #f0f0f0;
+}
+
+.day {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.day-number {
+  display: block;
+  font-size: 1.2em;
+}
+
+.events {
+  width: 100%;
+  max-width: 600px;
+}
+
+.events h2 {
+  margin-bottom: 10px;
+}
+
+.events ul {
+  list-style: none;
+  padding: 0;
+}
+
+.events li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.events-heading {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
