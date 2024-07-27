@@ -1,7 +1,7 @@
 import {
   createBrowserRouter,
 } from "react-router-dom";
-import { Register } from "./pages/auth/Register";
+import { RegisterPage } from "./pages/auth/Register";
 import {Home} from "./pages/home/Home";
 import {Menu} from "./pages/menu/Menu";
 import {Search} from "./pages/search/Search";
@@ -10,7 +10,7 @@ import {Reserve} from "./pages/reserve/Reserve"
 export const router = createBrowserRouter([
   {
     path: "/register",
-    element: <Register />,
+    element: <RegisterPage />,
 
   },
   {
