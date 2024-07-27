@@ -1,10 +1,9 @@
-import { RouterProvider } from "react-router-dom"
 import { Base } from "../../shared/BasePage"
 
 export const Register = () => {
   return (
   <Base>
-      teste
+      <h1 className="text-4xl">Register</h1>
   </Base>
   )
 }
