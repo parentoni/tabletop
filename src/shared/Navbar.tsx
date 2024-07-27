@@ -9,17 +9,29 @@ export const Navbar = () => {
     navigate("/menu");
   };
 
+  const handleSearchClick = () => {
+    navigate("/search")
+  };
+
+  const handleCalendarClick = () => {
+    navigate("/reserve")
+  };
+
+  const handleHomeClick = () => {
+    navigate("/home")
+  };
+
   return (
     <div className="btm-nav">
-      <button>
+      <button onClick={handleHomeClick}>
         <Home className="h-5 w-5"/>
         <span className="btm-nav-label">Home</span>
       </button>
-      <button className="active">
+      <button className="active" onClick={handleCalendarClick}>
         <Calendar className="h-5 w-5"/>
         <span className="btm-nav-label">Reserve</span>
       </button>
-      <button>
+      <button onClick={handleSearchClick}>
         <Search className="h-5 w-5"/>
         <span className="btm-nav-label">Search</span>
       </button>

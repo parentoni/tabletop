@@ -1,18 +1,12 @@
 import { Base } from "../../shared/BasePage";
 import { Navbar } from "../../shared/Navbar";
 import { Link } from "react-router-dom";
-
-const userInitials = "VK"
+import {UserIcon} from "../../shared/UserIcon";
 
 export const Menu = () => {
   return (
     <Base>
-      {/*Avatar*/}
-      <div className="avatar placeholder flex justify-end w-full">
-        <div className="bg-gray-800 text-white w-16 rounded-full">
-          <span className="text-3xl">{userInitials}</span>
-        </div>
-      </div>
+      <UserIcon />
 
       {/*Menu items*/}
       <div className="flex flex-col items-center justify-start min-h-screen">
