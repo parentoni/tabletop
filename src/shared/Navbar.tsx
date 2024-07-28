@@ -1,5 +1,8 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { AlignJustify, Calendar, Home, Search } from "lucide-react";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "..";
+import { useEffect } from "react";
 
 export const Navbar = () => {
   const navigate = useNavigate();
@@ -21,6 +24,12 @@ export const Navbar = () => {
     navigate("/home");
   };
 
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) return;
+      navigate("/login")
+    })
+  }, [])
   return (
     <div className="btm-nav max-w-sm mx-auto">
       <button

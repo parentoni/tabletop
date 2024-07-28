@@ -8,6 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 import { RouterProvider } from 'react-router';
 import { router } from './Router';
 import { getAuth } from 'firebase/auth';
+import { UserContextProvider } from './shared/UserContext';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -55,9 +56,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <Root />
-  </React.StrictMode>
+  <UserContextProvider>
+    <RouterProvider router={router}/>
+  </UserContextProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

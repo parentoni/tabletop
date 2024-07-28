@@ -2,10 +2,23 @@ import { Base } from "../../shared/BasePage";
 import { Navbar } from "../../shared/Navbar";
 import { UserIcon } from "../../shared/UserIcon";
 import { TopProfiles } from "../../shared/TopProfiles";
+import { useEffect, useState } from "react";
+import { onAuthStateChanged, User } from "firebase/auth";
+import { auth } from "../..";
 
 export const Home = () => {
+
   const suggestedEvents = ["Event A", "Event B", "Event C"];
   const recentActivities = ["Activity 1", "Activity 2", "Activity 3"];
+
+  const [user, setUser] = useState<User>();
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (!user) return;
+      setUser(user)
+    });
+  }, [])
 
   return (
     <div className="container mx-auto max-w-sm">
@@ -15,7 +28,7 @@ export const Home = () => {
           <UserIcon />
         </div>
         <div className="welcome-message text-center p-4">
-          <h1 className="text-4xl font-bold mb-4">Welcome User1</h1>
+          <h1 className="text-4xl font-bold mb-4">Welcome {user?.displayName?.split(" ")[0]}</h1>
         </div>
 
         <div className="suggested-events p-4">
