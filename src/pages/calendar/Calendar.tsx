@@ -12,14 +12,14 @@ const getDatesForCurrentAndNextWeek = () => {
     const date = new Date(today.setDate(startOfWeek + i));
     const day = date.toLocaleString('default', { weekday: 'short' });
     const dayNumber = date.getDate();
-    dates.push({ day, dayNumber });
+    dates.push({ day, dayNumber, date: date.toISOString().split('T')[0] });
   }
   return dates;
 };
 
 export const Calendar = () => {
   const navigate = useNavigate();
-  const [dates, setDates] = useState<{ day: string, dayNumber: number }[]>([]);
+  const [dates, setDates] = useState<{ day: string, dayNumber: number, date: string }[]>([]);
   const [events, setEvents] = useState<string[]>([]);
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export const Calendar = () => {
     setEvents(["Event 1", "Event 2", "Event 3"]);
   }, []);
 
-  const handleDateClick = () => {
-    navigate("/pages/reserve");
+  const handleDateClick = (date: string) => {
+    navigate(`/pages/reserve?date=${date}`);
   };
 
   return (
@@ -39,7 +39,7 @@ export const Calendar = () => {
         <div className="calendar-container">
           <div className="calendar">
             {dates.map((date, index) => (
-              <div key={index} className="date" onClick={handleDateClick}>
+              <div key={index} className="date" onClick={() => handleDateClick(date.date)}>
                 <span className="day">{date.day}</span>
                 <span className="day-number">{date.dayNumber}</span>
               </div>

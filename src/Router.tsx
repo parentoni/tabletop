@@ -7,6 +7,7 @@ import {Menu} from "./pages/menu/Menu";
 import {Search} from "./pages/search/Search";
 import {Calendar} from "./pages/calendar/Calendar";
 import { Login } from "./pages/auth/Login";
+import {Reserve} from "./pages/reserve/Reserve";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +33,10 @@ export const router = createBrowserRouter([
   {
     path: "/calendar",
     element: <Calendar />,
+  },
+  {
+    path: "/reserve",
+    element: <Reserve/>,
   },
 ]);
 
