@@ -153,3 +153,29 @@ html {
   width: 100%;
   max-width: 500px;
 }
+
+body {
+  background-color: var(--background-color, #ffffff);
+  color: var(--text-color, #000000);
+}
+
+body.dark {
+  --background-color: #121212;
+  --text-color: #ffffff;
+}
+
+.btm-nav {
+  background-color: inherit;
+}
+
+.button {
+  @apply w-full p-2 rounded text-white;
+}
+
+.button-primary {
+  @apply bg-blue-500 hover:bg-blue-600;
+}
+
+.button-success {
+  @apply bg-green-500;
+}

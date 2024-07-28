@@ -14,9 +14,8 @@ export const Menu = () => {
           <ul className="menu bg-white rounded-box w-full shadow-lg">
             <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/settings">Settings</Link></li>
             <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/statistics">Statistics</Link></li>
-            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/temp1">Temporary Item 1</Link></li>
-            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/temp2">Temporary Item 2</Link></li>
-            <li className="menu-item w-full hover:bg-gray-200 hover:rounded-lg"><Link to="/temp3">Temporary Item 3</Link></li>
+            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/accountinformation">Account information</Link></li>
+            <li className="menu-item w-full hover:bg-gray-200 hover:rounded-lg"><Link to="/logout">Log out</Link></li>
           </ul>
         </div>
         <Navbar/>

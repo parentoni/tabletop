@@ -10,7 +10,10 @@ export const Home = () => {
   return (
     <div className="container mx-auto max-w-sm">
       <Base>
-        <UserIcon />
+        <div className="flex items-center p-4">
+          <img src={require("../../assets/logo-transparent.jpg")} alt="App Icon" className="w-10 h-10 mr-2" />
+          <UserIcon />
+        </div>
         <div className="welcome-message text-center p-4">
           <h1 className="text-4xl font-bold mb-4">Welcome User1</h1>
         </div>

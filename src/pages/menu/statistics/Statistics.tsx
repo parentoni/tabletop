@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { Base } from "../../shared/BasePage";
-import { Navbar } from "../../shared/Navbar";
-import {TopBar} from "../../shared/register/TopBar";
+import { Base } from "../../../shared/BasePage";
+import { Navbar } from "../../../shared/Navbar";
+import {TopBar} from "../../../shared/register/TopBar";
 
 type StatisticsData = {
   gamesPlayed: number;
