@@ -9,11 +9,11 @@ interface Profile {
 
 export const TopProfiles = () => {
   const profiles: Profile[] = [
-    { username: "User1", medal: "gold" },
-    { username: "User2", medal: "silver" },
-    { username: "User3", medal: "bronze" },
-    { username: "User4", medal: null },
-    { username: "User5", medal: null },
+    { username: "Ben", medal: "gold" },
+    { username: "James", medal: "silver" },
+    { username: "Charles", medal: "bronze" },
+    { username: "Joe", medal: null },
+    { username: "Peter", medal: null },
   ];
 
   const getMedalIcon = (medal: MedalType, index: number) => {

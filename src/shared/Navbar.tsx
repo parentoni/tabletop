@@ -47,7 +47,7 @@ export const Navbar = () => {
         <span className="btm-nav-label">Calendar</span>
       </button>
       <button
-        className={location.pathname === "/search" ? "active" : ""}
+        className={location.pathname === "/search" ? "active" : "" }
         onClick={handleSearchClick}
       >
         <Search className="h-5 w-5" />

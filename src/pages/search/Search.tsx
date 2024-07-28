@@ -7,7 +7,10 @@ export const Search = () => {
   return (
     <div className="container mx-auto max-w-sm">
       <Base>
-        <UserIcon/>
+        <div className="flex items-center p-4">
+          <img src={require("../../assets/logo-transparent.jpg")} alt="App Icon" className="w-10 h-10 mr-2"/>
+          <UserIcon/>
+        </div>
 
         <label className="input input-bordered flex items-center gap-2">
           <input type="text" className="grow" placeholder="Search"/>

@@ -8,8 +8,7 @@ import { auth } from "../..";
 
 export const Home = () => {
 
-  const suggestedEvents = ["Event A", "Event B", "Event C"];
-  const recentActivities = ["Activity 1", "Activity 2", "Activity 3"];
+  const suggestedEvents = ["Pool against Joe", "Table tennis with Peter", "Chess with Charles"];
 
   const [user, setUser] = useState<User>();
 
@@ -44,16 +43,6 @@ export const Home = () => {
           <h2 className="text-2xl font-bold mb-2">Top Profiles</h2>
           <TopProfiles />
         </div>
-
-        <div className="recent-activities p-4">
-          <h2 className="text-2xl font-bold mb-2">Recent Activities</h2>
-          <ul>
-            {recentActivities.map((activity, index) => (
-              <li key={index} className="mb-1">{activity}</li>
-            ))}
-          </ul>
-        </div>
-
         <Navbar />
       </Base>
     </div>

@@ -32,7 +32,7 @@ export function Login () {
   return(
     <Base>
       <div className="flex  justify-center ">
-        <div className=" max-w-lg w-full bg-white lg:mt-24">
+        <div className=" max-w-lg w-full lg:mt-24">
 
           <div className="flex justify-between mb-3">
             <button className="" onClick={() => location.key !== 'default'? navigate(-1):navigate('/')}>
