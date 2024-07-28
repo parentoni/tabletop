@@ -12,14 +12,29 @@ export const Menu = () => {
         {/*Menu items*/}
         <div className="flex flex-col items-center justify-start min-h-screen">
           <ul className="menu bg-white rounded-box w-full shadow-lg">
-            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/settings">Settings</Link></li>
-            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/statistics">Statistics</Link></li>
-            <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg"><Link to="/accountinformation">Account information</Link></li>
-            <li className="menu-item w-full hover:bg-gray-200 hover:rounded-lg"><Link to="/logout">Log out</Link></li>
+            <MenuLink to={"/settings"} title={"Settings"}/>
+            <MenuLink to={"/statistics"} title={"Statistics"}/>
+            <MenuLink to={"/accountinformation"} title={"Account information"}/>
+            <MenuLink to={"/reserve"} title={"Book a spot"}/>
+            <li className="menu-item w-full border-gray-300 hover:bg-gray-200 hover:rounded-lg">
+              <Link to="/logout">Log out</Link>
+            </li>
           </ul>
         </div>
         <Navbar/>
       </Base>
     </div>
   );
+
+}
+
+export type MenuLinkInterface = {
+  to: string, title: string
+}
+export const MenuLink = (props: MenuLinkInterface) => {
+  return (
+    <li className="menu-item w-full border-b border-gray-300 hover:bg-gray-200 hover:rounded-lg">
+      <Link to={props.to}>{props.title}</Link>
+    </li>
+  )
 }
