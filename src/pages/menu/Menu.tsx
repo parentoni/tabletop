@@ -19,6 +19,7 @@ export const Menu = () => {
             <MenuLink to={"/statistics"} title={"Statistics"}/>
             <MenuLink to={"/accountinformation"} title={"Account information"}/>
             <MenuLink to={"/reserve"} title={"Book a spot"}/>
+            <MenuLink to={"/gamereport"} title={"Report game outcome"}/>
             <li className="menu-item w-full border-gray-300 hover:bg-gray-200 hover:rounded-lg">
               <Link to="/logout">Log out</Link>
             </li>

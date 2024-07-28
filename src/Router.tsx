@@ -10,6 +10,7 @@ import { Statistics } from "./pages/menu/statistics/Statistics";
 import { AccountInformation } from "./pages/menu/accountinformation/AccountInformation";
 import { Settings } from "./pages/menu/settings/Settings";
 import { Logout } from "./pages/menu/logout/Logout";
+import {GameReport} from "./pages/menu/gamereport/GameReport";
 
 export const router = createBrowserRouter([
   {
@@ -56,4 +57,8 @@ export const router = createBrowserRouter([
     path: "/logout",
     element: <Logout />,
   },
+  {
+    path: "/gamereport",
+    element: <GameReport />
+  }
 ]);

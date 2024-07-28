@@ -10,6 +10,7 @@ import { RouterProvider } from 'react-router';
 import { router } from './Router';
 
 import { UserContextProvider } from './shared/UserContext';
+import { GameStatisticsProvider } from './pages/GameStatisticsContext';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -59,7 +60,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <UserContextProvider>
-    <RouterProvider router={router}/>
+    <GameStatisticsProvider>
+      <RouterProvider router={router}/>
+    </GameStatisticsProvider>
   </UserContextProvider>
 );
 
