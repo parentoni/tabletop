@@ -15,8 +15,56 @@ type Player = {
 
 const fetchDummyPlayers = async (searchTerm: string) => {
   return [
-    { id: "1", name: "Player One" },
-    { id: "2", name: "Player Two" },
+    { id: "1", name: "Liam" },
+    { id: "2", name: "Noah" },
+    { id: "3", name: "Oliver" },
+    { id: "4", name: "Elijah" },
+    { id: "5", name: "William" },
+    { id: "6", name: "James" },
+    { id: "7", name: "Benjamin" },
+    { id: "8", name: "Lucas" },
+    { id: "9", name: "Henry" },
+    { id: "10", name: "Alexander" },
+    { id: "11", name: "Mason" },
+    { id: "12", name: "Michael" },
+    { id: "13", name: "Ethan" },
+    { id: "14", name: "Daniel" },
+    { id: "15", name: "Jacob" },
+    { id: "16", name: "Logan" },
+    { id: "17", name: "Jackson" },
+    { id: "18", name: "Levi" },
+    { id: "19", name: "Sebastian" },
+    { id: "20", name: "Mateo" },
+    { id: "21", name: "Jack" },
+    { id: "22", name: "Owen" },
+    { id: "23", name: "Theodore" },
+    { id: "24", name: "Aiden" },
+    { id: "25", name: "Samuel" },
+    { id: "26", name: "Joseph" },
+    { id: "27", name: "John" },
+    { id: "28", name: "David" },
+    { id: "29", name: "Wyatt" },
+    { id: "30", name: "Matthew" },
+    { id: "31", name: "Luke" },
+    { id: "32", name: "Asher" },
+    { id: "33", name: "Carter" },
+    { id: "34", name: "Julian" },
+    { id: "35", name: "Grayson" },
+    { id: "36", name: "Leo" },
+    { id: "37", name: "Jayden" },
+    { id: "38", name: "Gabriel" },
+    { id: "39", name: "Isaac" },
+    { id: "40", name: "Lincoln" },
+    { id: "41", name: "Anthony" },
+    { id: "42", name: "Hudson" },
+    { id: "43", name: "Dylan" },
+    { id: "44", name: "Ezra" },
+    { id: "45", name: "Thomas" },
+    { id: "46", name: "Charles" },
+    { id: "47", name: "Christopher" },
+    { id: "48", name: "Jaxon" },
+    { id: "49", name: "Maverick" },
+    { id: "50", name: "Josiah" },
   ].filter(player => player.name.toLowerCase().includes(searchTerm.toLowerCase()));
 };
 
@@ -118,7 +166,7 @@ export const Reserve = () => {
             <label className="block text-gray-700">Location</label>
             <select className="select select-bordered w-full" onChange={e => setSelectedLocation({name: e.target.value.split("@")[0] as string, college: e.target.value.split("@")[1] as string})}>
               {locations?.map(loc => (
-                <option value={loc.name + "@" + loc.college}>{loc.name} @ {loc.college}</option>    
+                <option value={loc.name + "@" + loc.college}>{loc.name} @ {loc.college}</option>
               ))}
             </select>
           </div>
@@ -127,7 +175,7 @@ export const Reserve = () => {
             <label className="block text-gray-700">Invite Players</label>
             <input type="text" value={playerSearch} onChange={(e) => handlePlayerSearch(e.target.value)} className="w-full p-2 border rounded" placeholder="Search players" />
             {playerResults.length > 0 && (
-              <ul className="border rounded mt-2">
+              <ul className="border rounded mt-2 max-h-40 overflow-y-auto">
                 {playerResults.map((player: Player) => (
                   <li key={player.id} className="p-2 hover:bg-gray-200 cursor-pointer" onClick={() => handleAddPlayer(player)}>
                     {player.name}

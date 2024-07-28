@@ -158,16 +158,15 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 body {
-  background-color: var(--background-color, #ffffff);
   color: var(--text-color, #000000);
-  background-image: linear-gradient(60deg, #48cae4, #ade8f4);
 }
 
 .btm-nav button.active {
-  background-color: #00b4d8;
+  background-color: #caf0f8;
   transform: scale(1.1);
   border-radius: 0.25rem;
 }
@@ -193,6 +192,9 @@ body.dark {
   background-color: white;
 }
 
+.user-icon {
+  background-color: #00356B;
+}
 
 .button {
   @apply w-full p-2 rounded text-white;
