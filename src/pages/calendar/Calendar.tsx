@@ -3,6 +3,9 @@ import { Base } from "../../shared/BasePage";
 import { Navbar } from "../../shared/Navbar";
 import { UserIcon } from "../../shared/UserIcon";
 import { useState, useEffect } from "react";
+import { BookingPersistent } from "../../shared/PersistentTypes";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../..";
 
 const getDatesForCurrentAndNextWeek = () => {
   const dates = [];
@@ -22,11 +25,21 @@ const getDatesForCurrentAndNextWeek = () => {
 export const Calendar = () => {
   const navigate = useNavigate();
   const [dates, setDates] = useState<{ day: string, dayNumber: number, date: string }[]>([]);
-  const [events, setEvents] = useState<string[]>([]);
+  const [events, setEvents] = useState<BookingPersistent[]>([]);
 
   useEffect(() => {
-    setDates(getDatesForCurrentAndNextWeek());
-    setEvents(["Event 1", "Event 2", "Event 3"]);
+    //setDates(getDatesForCurrentAndNextWeek());
+    getDocs(collection(db, "booking")).then(res => {
+      const temp: BookingPersistent[] = [];
+      res.forEach(doc => {
+        temp.push({
+          location: doc.data().location,
+          user: doc.data().user,
+          time:doc.data().time.toDate(),
+        })
+      })
+      setEvents(temp)
+    })
   }, []);
 
   const handleDateClick = (date: string) => {
@@ -51,10 +64,14 @@ export const Calendar = () => {
           </div>
           <div className="events">
             <h2 className="events-heading">Upcoming Events</h2>
-            <ul>
-              {events.map((event, index) => (
-                <li key={index}>{event}</li>
-              ))}
+            <ul className="gap-4 flex flex-col">
+              {events.map(doc => (
+                <div className="flex bg-neutral-100 py-2 px-2 rounded-md flex-col">
+                  <div className="text-lg">{doc.location.name} @ {doc.location.college}</div>
+                  <div className="text-sm">Organized by <span className="text-primary">{doc.user.name}</span></div>
+                  <div className="text-md">{doc.time.toLocaleString()}</div>
+                </div> 
+              ))} 
             </ul>
           </div>
         </div>

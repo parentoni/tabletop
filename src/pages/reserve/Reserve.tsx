@@ -74,7 +74,10 @@ export const Reserve = () => {
       const data = {
         time: new Date(date + ":" + time),
         location: selectedLocation,
-        user: user.current.uid
+        user: {
+          name: user.current.displayName,
+          email: user.current.email
+        }
       }
 
       await addDoc(collection(db, "booking"), data)
