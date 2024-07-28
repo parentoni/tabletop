@@ -8,6 +8,7 @@ import {Search} from "./pages/search/Search";
 import {Calendar} from "./pages/calendar/Calendar";
 import { Login } from "./pages/auth/Login";
 import {Reserve} from "./pages/reserve/Reserve";
+import {Statistics} from "./pages/statistics/Statistics";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
     path: "/reserve",
     element: <Reserve/>,
   },
+  {
+    path: "/statistics",
+    element: <Statistics/>
+  }
 ]);
 
 
