@@ -1,15 +1,27 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Base } from "../../shared/BasePage";
 import { Navbar } from "../../shared/Navbar";
-import { UserIcon } from "../../shared/UserIcon";
+import { TopBar } from "../../shared/register/TopBar";
 
 type Player = {
   id: string;
   name: string;
 };
 
+const fetchDummyPlayers = async (searchTerm: string) => {
+  return [
+    { id: "1", name: "Player One" },
+    { id: "2", name: "Player Two" },
+  ].filter(player => player.name.toLowerCase().includes(searchTerm.toLowerCase()));
+};
+
+const submitDummyReservation = async (reservation: any) => {
+  return { success: true };
+};
+
 export const Reserve = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
@@ -29,8 +41,7 @@ export const Reserve = () => {
 
   const handlePlayerSearch = async (searchTerm: string) => {
     setPlayerSearch(searchTerm);
-    const response = await fetch(`/api/players?search=${searchTerm}`);
-    const data = await response.json();
+    const data = await fetchDummyPlayers(searchTerm);
     setPlayerResults(data);
   };
 
@@ -48,20 +59,15 @@ export const Reserve = () => {
       reservationName,
       invitedPlayers,
     };
-    await fetch("/api/reservations", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(reservation),
-    });
+    await submitDummyReservation(reservation);
     setSuccessMessage("Reservation successfully made!");
+    navigate("/home");
   };
 
   return (
     <div className="container mx-auto max-w-sm">
       <Base>
-        <UserIcon />
+        <TopBar />
         <form onSubmit={handleSubmit} className="p-4 bg-white rounded-lg shadow-md">
           <div className="mb-4">
             <label className="block text-gray-700">Date</label>

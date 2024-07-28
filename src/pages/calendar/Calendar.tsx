@@ -7,9 +7,11 @@ import { useState, useEffect } from "react";
 const getDatesForCurrentAndNextWeek = () => {
   const dates = [];
   const today = new Date();
-  const startOfWeek = today.getDate() - today.getDay();
+  const startOfWeek = new Date(today);
+  startOfWeek.setDate(today.getDate() - today.getDay());
   for (let i = 0; i < 14; i++) {
-    const date = new Date(today.setDate(startOfWeek + i));
+    const date = new Date(startOfWeek);
+    date.setDate(startOfWeek.getDate() + i);
     const day = date.toLocaleString('default', { weekday: 'short' });
     const dayNumber = date.getDate();
     dates.push({ day, dayNumber, date: date.toISOString().split('T')[0] });
@@ -24,12 +26,14 @@ export const Calendar = () => {
 
   useEffect(() => {
     setDates(getDatesForCurrentAndNextWeek());
-    // Fetch upcoming events for the user
     setEvents(["Event 1", "Event 2", "Event 3"]);
   }, []);
 
   const handleDateClick = (date: string) => {
-    navigate(`/pages/reserve?date=${date}`);
+    const selectedDate = new Date(date);
+    selectedDate.setDate(selectedDate.getDate() - 1);
+    const adjustedDate = selectedDate.toISOString().split('T')[0];
+    navigate(`/reserve?date=${adjustedDate}`);
   };
 
   return (
