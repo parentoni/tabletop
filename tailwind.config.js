@@ -4,13 +4,14 @@ module.exports = {
   content: ["./src/**/*.{tsx,ts}"],
   theme: {
     extend: {
+      primary: "#00218D"
     },
   },
   daisyui: {
     themes: [{
       light: {
         ...require("daisyui/src/theming/themes")["[data-theme=light]"],
-        "primary": "FFA1F5",
+        "primary": "00218D",
         "hover": "rgb(0, 0, 0, 0.05)"
       }
     }]
