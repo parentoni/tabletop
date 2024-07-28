@@ -7,20 +7,6 @@ import { BookingPersistent } from "../../shared/PersistentTypes";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../..";
 
-const getDatesForCurrentAndNextWeek = () => {
-  const dates = [];
-  const today = new Date();
-  const startOfWeek = new Date(today);
-  startOfWeek.setDate(today.getDate() - today.getDay());
-  for (let i = 0; i < 14; i++) {
-    const date = new Date(startOfWeek);
-    date.setDate(startOfWeek.getDate() + i);
-    const day = date.toLocaleString('default', { weekday: 'short' });
-    const dayNumber = date.getDate();
-    dates.push({ day, dayNumber, date: date.toISOString().split('T')[0] });
-  }
-  return dates;
-};
 
 export const Calendar = () => {
   const navigate = useNavigate();

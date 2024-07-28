@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Base } from "../../../shared/BasePage";
 import { Navbar } from "../../../shared/Navbar";
 import { TopBar } from "../../../shared/register/TopBar";
+import { UserContext } from "../../../shared/UserContext";
 
 type User = {
   name: string;
@@ -27,34 +28,34 @@ const saveUserData = async (user: User): Promise<{ success: boolean }> => {
 };
 
 export const AccountInformation = () => {
-  const [user, setUser] = useState<User | null>(null);
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
 
-  useEffect(() => {
-    const getUserData = async () => {
-      const userData = await fetchUserData();
-      setUser(userData);
-      setName(userData.name);
-      setEmail(userData.email);
-    };
+  const {user} = useContext(UserContext)
 
-    getUserData();
-  }, []);
+  //useEffect(() => {
+  //  const getUserData = async () => {
+  //    const userData = await fetchUserData();
+  //    setName(userData.name);
+  //    setEmail(userData.email);
+  //  };
+
+  //  getUserData();
+  //}, []);
 
   const handleSave = async () => {
-    if (user) {
-      const updatedUser = { ...user, name, email };
-      const response = await saveUserData(updatedUser);
-      if (response.success) {
-        setUser(updatedUser);
-        setIsEditing(false);
-        setSuccessMessage("Changes saved successfully!");
-        setTimeout(() => setSuccessMessage(""), 3000);
-      }
-    }
+  //  if (user) {
+  //    const updatedUser = { ...user, name, email };
+  //    const response = await saveUserData(updatedUser);
+  //    if (response.success) {
+  //      setUser(updatedUser);
+  //      setIsEditing(false);
+  //      setSuccessMessage("Changes saved successfully!");
+  //      setTimeout(() => setSuccessMessage(""), 3000);
+  //    }
+  //  }
   };
 
   return (
@@ -68,7 +69,7 @@ export const AccountInformation = () => {
                 <label className="block text-gray-700">Name</label>
                 <input
                   type="text"
-                  value={name}
+                  value={user.displayName as string}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full p-2 border rounded"
                   readOnly={!isEditing}
@@ -78,7 +79,7 @@ export const AccountInformation = () => {
                 <label className="block text-gray-700">Email</label>
                 <input
                   type="email"
-                  value={email}
+                  value={user.email as string}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full p-2 border rounded"
                   readOnly={!isEditing}
