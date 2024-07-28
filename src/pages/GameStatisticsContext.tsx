@@ -14,9 +14,9 @@ type GameStatisticsContextType = {
 };
 
 const initialStatistics: StatisticsData = {
-  gamesPlayed: 0,
-  wins: 0,
-  losses: 0,
+  gamesPlayed: 69,
+  wins: 42,
+  losses: 27,
 };
 
 const GameStatisticsContext = createContext<GameStatisticsContextType | undefined>(undefined);
